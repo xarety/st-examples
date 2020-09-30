@@ -16,7 +16,7 @@ import { NotificationsExample } from './examples/notifications';
 
 export const App: React.FC = () => (
     <React.StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename="/new/examples">
             <Frame>
                 <Page
                     sidebar={
