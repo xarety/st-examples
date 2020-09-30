@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "@servicetitan/web-components": {
-      "signature": "98d920f9408435150f29290fced3c761",
-      "file": true
-    }
-  }
-}

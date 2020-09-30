@@ -1,4 +1,4 @@
-import { register } from '@sandboxes/web-components';
+import { register } from '@servicetitan/web-components';
 import { App } from './app';
 
 declare global {

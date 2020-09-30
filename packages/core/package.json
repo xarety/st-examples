@@ -1,5 +1,5 @@
 {
-    "name": "examples",
+    "name": "@sandboxes/examples",
     "version": "0.0.0",
     "description": "",
     "main": "./dist/index.js",

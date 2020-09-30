@@ -14,5 +14,8 @@
     },
     "devDependencies": {
         "@servicetitan/startup": "file:.yalc/@servicetitan/startup"
+    },
+    "dependencies": {
+        "@servicetitan/web-components": "file:.yalc/@servicetitan/web-components"
     }
 }
