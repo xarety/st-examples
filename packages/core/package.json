@@ -37,7 +37,7 @@
         "@types/react-router-dom": "~5.1.5"
     },
     "publishConfig": {
-        "access": "restricted"
+        "access": "public"
     },
     "cli": {
         "web-component": "st-examples"
