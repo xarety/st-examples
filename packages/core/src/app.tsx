@@ -1,7 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { SideNavLinkItem } from '@servicetitan/link-item';
+
+import './app.css';
+import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
+import {
+    TableExample,
+    TableMasterDetailExample,
+    TableStateCachingExample,
+} from '@servicetitan/table/dist/demo';
+import { FileUploaderExample, NumberInputExample } from '@servicetitan/form/dist/demo';
+import { ConfirmExample } from './examples/confirm';
+import { BasicExample as ConfirmNavigationExample } from '@servicetitan/confirm-navigation/dist/demo';
+import { NotificationsExample } from './examples/notifications';
 
 export const App: React.FC = () => (
     <React.StrictMode>
@@ -11,12 +22,30 @@ export const App: React.FC = () => (
                     sidebar={
                         <Sidebar>
                             <Sidebar.Section padding="y">
-                                <SideNav title="Application">
-                                    <SideNavLinkItem pathname="/" exact>
-                                        Main page
+                                <SideNav title="Runtime">
+                                    <SideNavLinkItem pathname="/table" exact>
+                                        Table
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/second-page">
-                                        Second page
+                                    <SideNavLinkItem pathname="/table-master-detail">
+                                        Table (Master/Detail)
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/table-state-caching">
+                                        Table (State Caching)
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/confirm" exact>
+                                        Confirm
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/confirm-navigation">
+                                        Confirm Navigation
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/file-uploader">
+                                        File Uploader
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/number-input">
+                                        Number Input
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/notifications">
+                                        Notifications
                                     </SideNavLinkItem>
                                 </SideNav>
                             </Sidebar.Section>
@@ -25,15 +54,15 @@ export const App: React.FC = () => (
                     maxWidth="wide"
                 >
                     <Switch>
-                        <Route
-                            path="/"
-                            exact
-                            component={() => <React.Fragment>Main page</React.Fragment>}
-                        />
-                        <Route
-                            path="/second-page"
-                            component={() => <React.Fragment>Second page</React.Fragment>}
-                        />
+                        <Route path="/table" component={TableExample} />
+                        <Route path="/table-master-detail" component={TableMasterDetailExample} />
+                        <Route path="/table-state-caching" component={TableStateCachingExample} />
+                        <Route path="/confirm" component={ConfirmExample} />
+                        <Route path="/confirm-navigation" component={ConfirmNavigationExample} />
+                        <Route path="/file-uploader" component={FileUploaderExample} />
+                        <Route path="/number-input" component={NumberInputExample} />
+                        <Route path="/notifications" component={NotificationsExample} />
+                        <Redirect path="/" to="/table" />
                     </Switch>
                 </Page>
             </Frame>
