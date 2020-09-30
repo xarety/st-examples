@@ -1,0 +1,29 @@
+{
+  "name": "@servicetitan/web-components",
+  "version": "9.1.0+98d920f9",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/servicetitan/uikit.git",
+    "directory": "packages/web-components"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "react-shadow-dom-retarget-events": "~1.0.11"
+  },
+  "peerDependencies": {
+    "react": "~16.13.1",
+    "react-dom": "~16.13.1"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "cli": {
+    "webpack": false
+  }
+}

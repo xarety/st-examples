@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@servicetitan/startup": {
+      "signature": "57cf9f482b239959a86967ba3bb3522c",
+      "file": true,
+      "replaced": "~9.1.0"
+    }
+  }
+}
