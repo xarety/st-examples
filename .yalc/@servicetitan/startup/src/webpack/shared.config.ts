@@ -7,18 +7,7 @@ import merge from 'webpack-merge';
 // TODO: move "utils" to the "src" folder
 import { getFolders, readJson } from '../cli/utils';
 
-import { Options, WebComponent } from '.';
-
-const sharedDependencies = {
-    '@servicetitan/design-system': 'ServiceTitan.DesignSystem',
-    'classnames': 'ClassNames',
-    'formstate': 'FormState',
-    'mobx': 'MobX',
-    'mobx-react': 'MobXReact',
-    'mobx-utils': 'MobXUtils',
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-};
+import { Options, WebComponent, sharedDependencies } from '.';
 
 export interface Overrides {
     configuration?: Configuration;
@@ -32,7 +21,8 @@ export function createConfig(
     { exposeSharedDependencies, webComponent }: Options = {}
 ): Configuration {
     const { destination } = getFolders();
-    const { dependencies, cli } = readJson('./package.json');
+    const { dependencies } = readJson('./package.json');
+    const metadata = webComponent ? readJson(`./${destination}/metadata.json`) : undefined;
 
     const { HtmlWebpackPlugin: htmlWebpackPluginOptions } = plugins;
 
@@ -118,7 +108,7 @@ export function createConfig(
                                         ${htmlWebpackPlugin.tags.headTags}
                                     </head>
                                     <body>
-                                        <${cli['web-component']} />
+                                        <${metadata.name} />
 
                                         ${htmlWebpackPlugin.tags.bodyTags}
                                     </body>
@@ -151,7 +141,7 @@ export function createConfig(
                           }),
                           new DefinePlugin({
                               // eslint-disable-next-line @typescript-eslint/naming-convention
-                              WEB_COMPONENT_NAME: JSON.stringify(cli['web-component']),
+                              WEB_COMPONENT_NAME: JSON.stringify(metadata.name),
                               // eslint-disable-next-line @typescript-eslint/naming-convention
                               WEB_COMPONENT_LIGHT: JSON.stringify(
                                   webComponent === WebComponent.Light

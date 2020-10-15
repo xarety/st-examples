@@ -17,6 +17,17 @@ export enum WebComponent {
     Light = 'light',
 }
 
+export const sharedDependencies = {
+    '@servicetitan/design-system': 'ServiceTitan.DesignSystem',
+    'classnames': 'ClassNames',
+    'formstate': 'FormState',
+    'mobx': 'MobX',
+    'mobx-react': 'MobXReact',
+    'mobx-utils': 'MobXUtils',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+};
+
 export interface Options {
     customStyleRules?: boolean;
     exposeSharedDependencies?: boolean;

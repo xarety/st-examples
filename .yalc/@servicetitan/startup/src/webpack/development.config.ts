@@ -48,49 +48,47 @@ export function createConfig(
                 historyApiFallback: true,
             },
             module: {
-                rules: [
-                    ...(!customStyleRules
-                        ? [
-                              {
-                                  test: /\.module.css$/,
-                                  use: [
-                                      webComponent ? MiniCssExtractPlugin.loader : 'style-loader',
-                                      {
-                                          loader: 'css-loader',
-                                          options: {
-                                              modules: { exportLocalsConvention: 'camelCase' },
-                                          },
+                rules: !customStyleRules
+                    ? [
+                          {
+                              test: /\.module.css$/,
+                              use: [
+                                  webComponent ? MiniCssExtractPlugin.loader : 'style-loader',
+                                  {
+                                      loader: 'css-loader',
+                                      options: {
+                                          modules: { exportLocalsConvention: 'camelCase' },
                                       },
-                                  ],
-                              },
-                              {
-                                  test: /(\.css)$/,
-                                  exclude: (path: string) => {
-                                      if (
-                                          exposeSharedDependencies &&
-                                          path.endsWith('design-system.css')
-                                      ) {
-                                          return true;
-                                      }
-
-                                      return path.endsWith('.module.css');
                                   },
-                                  use: [
-                                      webComponent ? MiniCssExtractPlugin.loader : 'style-loader',
-                                      'css-loader',
-                                  ],
+                              ],
+                          },
+                          {
+                              test: /(\.css)$/,
+                              exclude: (path: string) => {
+                                  if (
+                                      exposeSharedDependencies &&
+                                      path.endsWith('design-system.css')
+                                  ) {
+                                      return true;
+                                  }
+
+                                  return path.endsWith('.module.css');
                               },
-                          ]
-                        : []),
-                    ...(exposeSharedDependencies
-                        ? [
-                              {
-                                  test: /design-system.css$/,
-                                  use: [MiniCssExtractPlugin.loader, 'css-loader'],
-                              },
-                          ]
-                        : []),
-                ],
+                              use: [
+                                  webComponent ? MiniCssExtractPlugin.loader : 'style-loader',
+                                  'css-loader',
+                              ],
+                          },
+                          ...(exposeSharedDependencies
+                              ? [
+                                    {
+                                        test: /design-system.css$/,
+                                        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                                    },
+                                ]
+                              : []),
+                      ]
+                    : [],
             },
             plugins: [
                 new WriteFilePlugin(writeFilePluginOptions),

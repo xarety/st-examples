@@ -6,8 +6,8 @@ import webpack, { Configuration } from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import { createWebpackConfig, WebComponent } from '../../webpack';
-import { log, readJson, isSass, isLess } from '.';
+import { createWebpackConfig, WebComponent, sharedDependencies } from '../../webpack';
+import { log, readJson, isSass, isLess, getFolders } from '.';
 
 export function isBundle() {
     return readJson('./package.json').cli?.webpack !== false;
@@ -24,7 +24,16 @@ export function isCustomStyleRules() {
 }
 
 export function isWebComponent() {
-    return readJson('./package.json').cli?.['web-component'] !== undefined;
+    return readJson('./package.json').cli?.['web-component'] === true;
+}
+
+function generateMetadata() {
+    const { destination } = getFolders();
+    const { name } = readJson('./package.json');
+
+    const metadata = { name, sharedDependencies };
+
+    fs.writeFileSync(`./${destination}/metadata.json`, JSON.stringify(metadata), 'utf8');
 }
 
 export async function bundle() {
@@ -98,23 +107,26 @@ export async function bundle() {
     };
 
     if (isWebComponent()) {
-        await run(
-            createWebpackConfig(
-                {
-                    configuration: { mode: 'production' },
-                },
-                { webComponent: WebComponent.Light }
-            )
-        );
+        generateMetadata();
 
-        return run(
-            createWebpackConfig(
-                {
-                    configuration: { mode: 'production' },
-                },
-                { webComponent: WebComponent.Full }
-            )
-        );
+        return Promise.all([
+            run(
+                createWebpackConfig(
+                    {
+                        configuration: { mode: 'production' },
+                    },
+                    { webComponent: WebComponent.Light }
+                )
+            ),
+            run(
+                createWebpackConfig(
+                    {
+                        configuration: { mode: 'production' },
+                    },
+                    { webComponent: WebComponent.Full }
+                )
+            ),
+        ]);
     }
 
     return run(
@@ -128,6 +140,10 @@ export async function bundle() {
 
 export async function bundleWatch() {
     log.info('Bundling the package...');
+
+    if (isWebComponent()) {
+        generateMetadata();
+    }
 
     const { devServer, ...config } = isWebComponent()
         ? createWebpackConfig(

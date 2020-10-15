@@ -2,11 +2,11 @@
   "version": "v1",
   "packages": {
     "@servicetitan/startup": {
-      "signature": "57cf9f482b239959a86967ba3bb3522c",
+      "signature": "6b08525e30506d57357ec15bd162257b",
       "file": true
     },
     "@servicetitan/web-components": {
-      "signature": "d1cddc17c04776b2cf966d1321d32a17",
+      "signature": "8db859eba92f11635bc69ab4f7024854",
       "file": true
     }
   }
