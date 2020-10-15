@@ -13,6 +13,7 @@
         "@servicetitan/design-system": "~5.3.1",
         "@servicetitan/form": "~9.1.0",
         "@servicetitan/link-item": "~9.1.0",
+        "@servicetitan/log-service": "~9.1.0",
         "@servicetitan/notifications": "~9.1.0",
         "@servicetitan/react-ioc": "~9.1.0",
         "@servicetitan/suppress-warnings": "~9.1.0",
@@ -40,6 +41,6 @@
         "access": "public"
     },
     "cli": {
-        "web-component": "st-examples"
+        "web-component": true
     }
 }
