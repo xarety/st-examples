@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import util from 'util';
+import crypto from 'crypto';
 import getPort, { makeRange } from 'get-port';
 import webpack, { Configuration } from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
@@ -27,11 +28,21 @@ export function isWebComponent() {
     return readJson('./package.json').cli?.['web-component'] === true;
 }
 
+function generateName(packageName: string) {
+    const name = packageName.replace(/\//g, '-').replace(/[^\w-]/g, '');
+    const hash = crypto.randomBytes(4).toString('hex');
+
+    return `${name}-${hash}`;
+}
+
 function generateMetadata() {
     const { destination } = getFolders();
     const { name } = readJson('./package.json');
 
-    const metadata = { name, sharedDependencies };
+    const metadata = {
+        name: generateName(name),
+        sharedDependencies,
+    };
 
     fs.writeFileSync(`./${destination}/metadata.json`, JSON.stringify(metadata), 'utf8');
 }
