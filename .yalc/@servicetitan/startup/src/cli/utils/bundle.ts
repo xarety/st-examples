@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import util from 'util';
+import execa from 'execa';
 import crypto from 'crypto';
 import getPort, { makeRange } from 'get-port';
 import webpack, { Configuration } from 'webpack';
@@ -35,16 +36,26 @@ function generateName(packageName: string) {
     return `${name}-${hash}`;
 }
 
-function generateMetadata() {
+async function prepareWebComponent() {
     const { destination } = getFolders();
     const { name } = readJson('./package.json');
 
-    const metadata = {
-        name: generateName(name),
-        sharedDependencies,
-    };
+    await execa(
+        'tsc',
+        [path.resolve(__dirname, '../../../web-component/index.ts'), '--outDir', process.cwd()],
+        {
+            stdio: 'inherit',
+        }
+    );
 
-    fs.writeFileSync(`./${destination}/metadata.json`, JSON.stringify(metadata), 'utf8');
+    fs.writeFileSync(
+        `./${destination}/metadata.json`,
+        JSON.stringify({
+            name: generateName(name),
+            sharedDependencies,
+        }),
+        'utf8'
+    );
 }
 
 export async function bundle() {
@@ -118,7 +129,7 @@ export async function bundle() {
     };
 
     if (isWebComponent()) {
-        generateMetadata();
+        await prepareWebComponent();
 
         return Promise.all([
             run(
@@ -153,7 +164,7 @@ export async function bundleWatch() {
     log.info('Bundling the package...');
 
     if (isWebComponent()) {
-        generateMetadata();
+        await prepareWebComponent();
     }
 
     const { devServer, ...config } = isWebComponent()

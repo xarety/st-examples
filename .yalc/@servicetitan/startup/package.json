@@ -1,6 +1,6 @@
 {
   "name": "@servicetitan/startup",
-  "version": "9.1.0+eb5cf5bb",
+  "version": "9.1.0-7af205ee",
   "description": "",
   "homepage": "https://docs.st.dev/docs/frontend/startup",
   "repository": {
@@ -14,7 +14,8 @@
     "dist",
     "src",
     "template",
-    "tsconfig"
+    "tsconfig",
+    "web-component"
   ],
   "bin": "./dist/cli/index.js",
   "dependencies": {

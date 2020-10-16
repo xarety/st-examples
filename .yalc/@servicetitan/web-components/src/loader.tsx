@@ -26,6 +26,16 @@ async function getBundleInfo(packageUrl: string) {
         {} as Record<string, { host: string; package: string }>
     );
 
+    for (const [dependency, variable] of Object.entries(metadata.sharedDependencies)) {
+        const packageVersion = dependencies[dependency];
+
+        if (!EXPOSED_DEPENDENCIES[dependency]) {
+            mismatch[dependency] = { host: 'missing', package: packageVersion };
+        } else if (EXPOSED_DEPENDENCIES[dependency] !== variable) {
+            mismatch[dependency] = { host: 'wrong global variable', package: packageVersion };
+        }
+    }
+
     const hasMismatch = !!Object.keys(mismatch).length;
     return {
         url: `${packageUrl}/dist/bundle/${hasMismatch ? 'full' : 'light'}/index.js`,
