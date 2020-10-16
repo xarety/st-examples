@@ -43,16 +43,19 @@ async function prepareWebComponent() {
     await execa(
         'tsc',
         [
-            path.resolve(__dirname, '../../../web-component/index.ts'),
             '--project',
-            'tsconfig.json',
-            // path.resolve(__dirname, '../../../web-component/tsconfig.json'),
+            path.resolve(__dirname, '../../../web-component/tsconfig.json'),
             '--outDir',
             `./${destination}`,
         ],
         {
             stdio: 'inherit',
         }
+    );
+
+    fs.copyFileSync(
+        path.resolve(__dirname, '../../../web-component/design-system.css'),
+        `./${destination}/design-system.css`
     );
 
     fs.writeFileSync(
