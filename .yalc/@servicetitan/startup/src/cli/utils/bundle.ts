@@ -42,7 +42,11 @@ async function prepareWebComponent() {
 
     await execa(
         'tsc',
-        [path.resolve(__dirname, '../../../web-component/index.ts'), '--outDir', process.cwd()],
+        [
+            path.resolve(__dirname, '../../../web-component/index.ts'),
+            '--outDir',
+            `./${destination}`,
+        ],
         {
             stdio: 'inherit',
         }
