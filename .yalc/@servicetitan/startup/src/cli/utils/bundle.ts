@@ -43,7 +43,8 @@ async function prepareWebComponent() {
     await execa(
         'tsc',
         [
-            path.resolve(__dirname, '../../../web-component/index.ts'),
+            '--project',
+            path.resolve(__dirname, '../../../web-component/tsconfig.json'),
             '--outDir',
             `./${destination}`,
         ],
