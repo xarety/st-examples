@@ -1,9 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+import { HashBrowserRouter } from '@servicetitan/hash-browser-router';
+
+import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
 import { SideNavLinkItem } from '@servicetitan/link-item';
 
-import './app.css';
-import { SideNav, Frame, Page, Sidebar } from '@servicetitan/design-system';
 import {
     TableExample,
     TableMasterDetailExample,
@@ -14,9 +16,11 @@ import { ConfirmExample } from './examples/confirm';
 import { BasicExample as ConfirmNavigationExample } from '@servicetitan/confirm-navigation/dist/demo';
 import { NotificationsExample } from './examples/notifications';
 
+import './app.css';
+
 export const App: React.FC = () => (
     <React.StrictMode>
-        <BrowserRouter basename="/new/examples">
+        <HashBrowserRouter basename="/new/examples">
             <Frame>
                 <Page
                     sidebar={
@@ -66,6 +70,6 @@ export const App: React.FC = () => (
                     </Switch>
                 </Page>
             </Frame>
-        </BrowserRouter>
+        </HashBrowserRouter>
     </React.StrictMode>
 );

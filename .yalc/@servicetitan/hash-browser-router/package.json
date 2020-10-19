@@ -1,0 +1,27 @@
+{
+  "name": "@servicetitan/hash-browser-router",
+  "version": "9.1.0-454cb2a6",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/servicetitan/uikit.git",
+    "directory": "packages/hash-browser-router"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "history": "~4.10.1",
+    "react": "~16.13.1",
+    "react-router": "~5.2.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "cli": {
+    "webpack": false
+  }
+}

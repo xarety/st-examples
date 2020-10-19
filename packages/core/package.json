@@ -12,6 +12,7 @@
         "@servicetitan/culture": "~9.1.0",
         "@servicetitan/design-system": "~5.3.1",
         "@servicetitan/form": "~9.1.0",
+        "@servicetitan/hash-browser-router": "file:.yalc/@servicetitan/hash-browser-router",
         "@servicetitan/link-item": "~9.1.0",
         "@servicetitan/log-service": "~9.1.0",
         "@servicetitan/notifications": "~9.1.0",

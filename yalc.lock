@@ -8,6 +8,10 @@
     "@servicetitan/web-components": {
       "signature": "7890ce88f874520d5be92511b162889e",
       "file": true
+    },
+    "@servicetitan/hash-browser-router": {
+      "signature": "454cb2a68093ef0c33768ec29fae3a04",
+      "file": true
     }
   }
 }
