@@ -8,13 +8,16 @@ import {
 import React from 'react';
 import { BrowserRouterProps, Router } from 'react-router-dom';
 
-export class HashBrowserRouter extends React.Component<BrowserRouterProps> {
-    history = createHashBrowserHistory(this.props);
-
-    render() {
-        return <Router history={this.history}>{this.props.children}</Router>;
-    }
+function useHistory(options: BrowserHistoryBuildOptions) {
+    return React.useRef(createHashBrowserHistory(options)).current;
 }
+
+export const HashBrowserRouter: React.FC<BrowserRouterProps> = props => {
+    const history = useHistory(props);
+    const { children } = props;
+
+    return <Router history={history}>{children}</Router>;
+};
 
 function createHashBrowserHistory(props: BrowserHistoryBuildOptions): History {
     const parent = createBrowserHistory(props);
