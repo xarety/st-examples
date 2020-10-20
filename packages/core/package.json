@@ -1,6 +1,6 @@
 {
     "name": "@sandboxes/examples",
-    "version": "1.5.9",
+    "version": "1.5.11",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
