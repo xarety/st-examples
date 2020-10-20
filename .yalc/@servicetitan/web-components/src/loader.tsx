@@ -6,7 +6,7 @@ import { useOptionalDependencies } from '@servicetitan/react-ioc';
 import { isCompatible } from './is-compatible';
 
 declare global {
-    const EXPOSED_DEPENDENCIES: Record<string, string>;
+    const EXPOSED_DEPENDENCIES: Record<string, { version: string; variable: string }>;
 }
 
 async function getBundleInfo(packageUrl: string) {
@@ -14,7 +14,7 @@ async function getBundleInfo(packageUrl: string) {
     const metadata = await (await fetch(`${packageUrl}/dist/metadata.json`)).json();
 
     const mismatch = Object.entries(EXPOSED_DEPENDENCIES).reduce(
-        (result, [dependency, hostVersion]) => {
+        (result, [dependency, { version: hostVersion }]) => {
             const packageVersion = dependencies[dependency];
 
             if (packageVersion && !isCompatible(hostVersion, packageVersion)) {
@@ -26,12 +26,15 @@ async function getBundleInfo(packageUrl: string) {
         {} as Record<string, { host: string; package: string }>
     );
 
+    console.log('EXPOSED_DEPENDENCIES');
+    console.log(EXPOSED_DEPENDENCIES);
+
     for (const [dependency, variable] of Object.entries(metadata.sharedDependencies)) {
         const packageVersion = dependencies[dependency];
 
         if (!EXPOSED_DEPENDENCIES[dependency]) {
             mismatch[dependency] = { host: 'missing', package: packageVersion };
-        } else if (EXPOSED_DEPENDENCIES[dependency] !== variable) {
+        } else if (EXPOSED_DEPENDENCIES[dependency].variable !== variable) {
             mismatch[dependency] = { host: 'wrong global variable', package: packageVersion };
         }
     }

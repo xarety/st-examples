@@ -18,14 +18,14 @@ export enum WebComponent {
 }
 
 export const sharedDependencies = {
-    '@servicetitan/design-system': 'ServiceTitan.DesignSystem',
-    'classnames': 'ClassNames',
-    'formstate': 'FormState',
-    'mobx': 'MobX',
-    'mobx-react': 'MobXReact',
-    'mobx-utils': 'MobXUtils',
-    'react': 'React',
-    'react-dom': 'ReactDOM',
+    '@servicetitan/design-system': 'SharedDependencies.ServiceTitan.DesignSystem',
+    'classnames': 'SharedDependencies.ClassNames',
+    'formstate': 'SharedDependencies.FormState',
+    'mobx': 'SharedDependencies.MobX',
+    'mobx-react': 'SharedDependencies.MobXReact',
+    'mobx-utils': 'SharedDependencies.MobXUtils',
+    'react': 'SharedDependencies.React',
+    'react-dom': 'SharedDependencies.ReactDOM',
 };
 
 export interface Options {
