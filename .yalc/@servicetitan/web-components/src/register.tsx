@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import retargetEvents from 'react-shadow-dom-retarget-events';
+
 declare global {
     const WEB_COMPONENT_NAME: string;
 }
@@ -31,6 +33,8 @@ export function register(Component: React.ComponentType, light: boolean) {
             root.appendChild(this.mountPoint);
 
             ReactDOM.render(<Component />, this.mountPoint);
+
+            retargetEvents(root);
         }
 
         disconnectedCallback() {
