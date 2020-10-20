@@ -1,6 +1,6 @@
 {
   "name": "@servicetitan/web-components",
-  "version": "9.1.0-dd46af8e",
+  "version": "9.1.0-eb52fc23",
   "description": "",
   "repository": {
     "type": "git",
@@ -14,7 +14,6 @@
     "src"
   ],
   "dependencies": {
-    "react-shadow-dom-retarget-events": "~1.0.11",
     "semver": "~7.3.2"
   },
   "peerDependencies": {

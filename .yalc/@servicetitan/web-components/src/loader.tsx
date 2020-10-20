@@ -26,9 +26,6 @@ async function getBundleInfo(packageUrl: string) {
         {} as Record<string, { host: string; package: string }>
     );
 
-    console.log('EXPOSED_DEPENDENCIES');
-    console.log(EXPOSED_DEPENDENCIES);
-
     for (const [dependency, variable] of Object.entries(metadata.sharedDependencies)) {
         const packageVersion = dependencies[dependency];
 
