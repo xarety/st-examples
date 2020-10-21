@@ -1,6 +1,6 @@
 {
   "name": "@servicetitan/hash-browser-router",
-  "version": "9.1.0-167f6d77",
+  "version": "9.1.0-9dbad64e",
   "description": "",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "peerDependencies": {
     "history": "~4.10.1",
     "react": "~16.13.1",
-    "react-router": "~5.2.0"
+    "react-router-dom": "~5.2.0"
   },
   "publishConfig": {
     "access": "restricted"

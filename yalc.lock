@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@servicetitan/startup": {
-      "signature": "cefebd1e4bf195566976f6ad43d382dc",
+      "signature": "2758997abd7271f74b1f9edcd7552135",
       "file": true
     },
     "@servicetitan/web-components": {
@@ -10,7 +10,7 @@
       "file": true
     },
     "@servicetitan/hash-browser-router": {
-      "signature": "167f6d77b7c3f4c8d50735e865860c32",
+      "signature": "9dbad64e0b6a2083790b520f5f29819a",
       "file": true
     }
   }
