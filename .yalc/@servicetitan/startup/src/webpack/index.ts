@@ -26,6 +26,7 @@ export const sharedDependencies = {
     'mobx-utils': 'SharedDependencies.MobXUtils',
     'react': 'SharedDependencies.React',
     'react-dom': 'SharedDependencies.ReactDOM',
+    'react-router': 'SharedDependencies.ReactRouter',
     'react-router-dom': 'SharedDependencies.ReactRouterDOM',
 };
 
