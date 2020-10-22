@@ -1,4 +1,0 @@
-{
-    "extends": "@servicetitan/startup/tsconfig/base",
-    "files": ["index.ts"]
-}
