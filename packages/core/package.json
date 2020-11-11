@@ -1,6 +1,6 @@
 {
     "name": "@sandboxes/examples",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
@@ -10,7 +10,7 @@
         "@servicetitan/confirm": "~9.4.2",
         "@servicetitan/confirm-navigation": "~9.4.2",
         "@servicetitan/culture": "~9.4.2",
-        "@servicetitan/design-system": "~5.3.1",
+        "@servicetitan/design-system": "~7.2.0",
         "@servicetitan/form": "~9.4.2",
         "@servicetitan/hash-browser-router": "~9.4.2",
         "@servicetitan/link-item": "~9.4.2",
