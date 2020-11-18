@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { HashBrowserRouter } from '@servicetitan/hash-browser-router';
 
-import { SideNav, Page, Sidebar } from '@servicetitan/design-system';
+import { SideNav, Sidebar } from '@servicetitan/design-system';
 import { SideNavLinkItem } from '@servicetitan/link-item';
 
 import {
@@ -12,8 +12,10 @@ import {
     TableStateCachingExample,
 } from '@servicetitan/table/dist/demo';
 import { FileUploaderExample, NumberInputExample } from '@servicetitan/form/dist/demo';
-import { ConfirmExample } from './examples/confirm';
 import { BasicExample as ConfirmNavigationExample } from '@servicetitan/confirm-navigation/dist/demo';
+
+import { Page } from './page';
+import { ConfirmExample } from './examples/confirm';
 import { NotificationsExample } from './examples/notifications';
 
 import './app.css';
@@ -55,6 +57,7 @@ export const App: React.FC = () => (
                     </Sidebar>
                 }
                 maxWidth="wide"
+                fullHeight
             >
                 <Switch>
                     <Route path="/new/examples/table" component={TableExample} />

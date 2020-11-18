@@ -1,0 +1,15 @@
+.page:global(.Page) {
+    max-width: 100%;
+}
+
+.page > :global(.Page__page) {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 100%;
+    overflow: auto;
+    min-height: 100%;
+}
+
+.page.full-height :global(.Page__content) {
+    height: 100%;
+}
