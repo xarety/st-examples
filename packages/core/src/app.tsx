@@ -56,7 +56,7 @@ export const App: React.FC = () => (
                         </Sidebar.Section>
                     </Sidebar>
                 }
-                maxWidth="wide"
+                spacing="relaxed"
                 fullHeight
             >
                 <Switch>
