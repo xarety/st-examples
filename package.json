@@ -13,6 +13,6 @@
         "test": "startup test"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~9.5.1"
+        "@servicetitan/startup": "file:.yalc/@servicetitan/startup"
     }
 }
