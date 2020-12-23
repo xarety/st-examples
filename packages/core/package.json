@@ -1,6 +1,6 @@
 {
     "name": "@sandboxes/examples",
-    "version": "3.8.6",
+    "version": "3.8.7",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
@@ -42,5 +42,6 @@
     },
     "cli": {
         "web-component": true
-    }
+    },
+    "gitHead": "eaf9ed00f123f90cbe17415ca3f6faaadf5da9d8"
 }
