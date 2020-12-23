@@ -1,6 +1,6 @@
 {
     "name": "@sandboxes/examples",
-    "version": "3.7.3",
+    "version": "3.7.4",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
@@ -41,8 +41,7 @@
         "@types/react-router-dom": "~5.1.5"
     },
     "publishConfig": {
-        "access": "public",
-        "registry": "localhost:4873"
+        "access": "public"
     },
     "cli": {
         "web-component": true
