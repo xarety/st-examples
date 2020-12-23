@@ -1,6 +1,6 @@
 {
     "name": "@sandboxes/examples",
-    "version": "3.7.2",
+    "version": "3.7.3",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
@@ -42,7 +42,7 @@
     },
     "publishConfig": {
         "access": "public",
-        "registry": "http://localhost:4873"
+        "registry": "localhost:4873"
     },
     "cli": {
         "web-component": true
