@@ -2,7 +2,7 @@
     "version": "3.9.0",
     "command": {
         "publish": {
-            "registry": "http://localhost:4873"
+            "registry": "https://localhost"
         }
     },
     "packages": [
