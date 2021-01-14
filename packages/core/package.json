@@ -1,6 +1,6 @@
 {
     "name": "@servicetitan/examples",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
@@ -46,5 +46,5 @@
     "cli": {
         "web-component": true
     },
-    "gitHead": "53c22bc5bab01646c2de4a680de0a3fadf51be20"
+    "gitHead": "5dc267e44d081918fa12a1ca311313451abb94b2"
 }
