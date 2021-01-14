@@ -18,8 +18,6 @@ import { Page } from './page';
 import { ConfirmExample } from './examples/confirm';
 import { NotificationsExample } from './examples/notifications';
 
-import './app.css';
-
 export const App: React.FC = () => (
     <React.StrictMode>
         <HashBrowserRouter>
