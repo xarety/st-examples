@@ -45,6 +45,5 @@
     },
     "cli": {
         "web-component": true
-    },
-    "gitHead": "fc1deb46ca3c8be332650038ef5f54eee103d357"
+    }
 }
