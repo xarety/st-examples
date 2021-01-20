@@ -1,6 +1,6 @@
 {
     "name": "@servicetitan/examples",
-    "version": "0.0.9",
+    "version": "0.0.11",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
