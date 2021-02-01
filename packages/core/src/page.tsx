@@ -4,7 +4,7 @@ import { Page as AnvilPage, PageProps as AnvilPageProps } from '@servicetitan/de
 
 import classnames from 'classnames';
 
-import Styles from './page.module.css';
+import * as Styles from './page.module.css';
 
 export interface PageProps extends AnvilPageProps {
     fullHeight?: boolean;

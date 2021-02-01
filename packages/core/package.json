@@ -7,19 +7,19 @@
     "dependencies": {
         "@progress/kendo-react-dateinputs": "~3.14.0",
         "@progress/kendo-react-intl": "~3.14.0",
-        "@servicetitan/confirm": "~9.8.6",
-        "@servicetitan/confirm-navigation": "~9.8.6",
-        "@servicetitan/culture": "~9.8.6",
-        "@servicetitan/design-system": "~7.7.2",
-        "@servicetitan/form": "~9.8.6",
-        "@servicetitan/hash-browser-router": "~9.8.6",
-        "@servicetitan/link-item": "~9.8.6",
-        "@servicetitan/log-service": "~9.8.6",
-        "@servicetitan/notifications": "~9.8.6",
-        "@servicetitan/react-ioc": "~9.8.6",
-        "@servicetitan/suppress-warnings": "~9.8.6",
-        "@servicetitan/table": "~9.8.6",
-        "@servicetitan/web-components": "~9.8.6",
+        "@servicetitan/confirm": "~9.11.4",
+        "@servicetitan/confirm-navigation": "~9.11.4",
+        "@servicetitan/culture": "~9.11.4",
+        "@servicetitan/design-system": "~7.8.2",
+        "@servicetitan/form": "~9.11.4",
+        "@servicetitan/hash-browser-router": "~9.11.4",
+        "@servicetitan/link-item": "~9.11.4",
+        "@servicetitan/log-service": "~9.11.4",
+        "@servicetitan/notifications": "~9.11.4",
+        "@servicetitan/react-ioc": "~9.11.4",
+        "@servicetitan/suppress-warnings": "~9.11.4",
+        "@servicetitan/table": "~9.11.4",
+        "@servicetitan/web-components": "~9.11.4",
         "accounting": "~0.4.1",
         "axios": "~0.21.1",
         "classnames": "~2.2.6",
@@ -45,6 +45,5 @@
     },
     "cli": {
         "web-component": true
-    },
-    "gitHead": "b31dc3f67fca2cdb11f6a27848cff932019be1a6"
+    }
 }
