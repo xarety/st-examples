@@ -1,5 +1,5 @@
 {
-    "name": "@servicetitan/examples",
+    "name": "@sandboxes/examples",
     "version": "1.0.0",
     "description": "",
     "main": "./dist/index.js",
@@ -41,7 +41,7 @@
         "@types/react-router-dom": "~5.1.7"
     },
     "publishConfig": {
-        "access": "restricted"
+        "access": "public"
     },
     "cli": {
         "web-component": true

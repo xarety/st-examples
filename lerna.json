@@ -1,10 +1,5 @@
 {
     "version": "1.0.0",
-    "command": {
-        "publish": {
-            "registry": "https://verdaccio.st.dev"
-        }
-    },
     "packages": [
         "packages/*"
     ]
