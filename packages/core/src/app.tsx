@@ -11,7 +11,11 @@ import {
     TableMasterDetailExample,
     TableStateCachingExample,
 } from '@servicetitan/table/dist/demo';
-import { FileUploaderExample, NumberInputExample } from '@servicetitan/form/dist/demo';
+import {
+    FileUploaderExample,
+    NumberInputExample,
+    DropdownStateExample,
+} from '@servicetitan/form/dist/demo';
 import { BasicExample as ConfirmNavigationExample } from '@servicetitan/confirm-navigation/dist/demo';
 
 import { Page } from './page';
@@ -50,6 +54,9 @@ export const App: React.FC = () => (
                                 <SideNavLinkItem pathname="/new/examples/notifications">
                                     Notifications
                                 </SideNavLinkItem>
+                                <SideNavLinkItem pathname="/new/examples/dropdown-state">
+                                    Dropdown State
+                                </SideNavLinkItem>
                             </SideNav>
                         </Sidebar.Section>
                     </Sidebar>
@@ -75,6 +82,7 @@ export const App: React.FC = () => (
                     <Route path="/new/examples/file-uploader" component={FileUploaderExample} />
                     <Route path="/new/examples/number-input" component={NumberInputExample} />
                     <Route path="/new/examples/notifications" component={NotificationsExample} />
+                    <Route path="/new/examples/dropdown-state" component={DropdownStateExample} />
                     <Redirect path="/new/examples/" to="/new/examples/table" />
                 </Switch>
             </Page>
