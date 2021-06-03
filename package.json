@@ -14,7 +14,7 @@
         "serve": "npm run build && lerna run serve"
     },
     "devDependencies": {
-        "@servicetitan/startup": "file:.yalc/@servicetitan/startup"
+        "@servicetitan/startup": "~10.5.0"
     },
     "dependencies": {
         "@servicetitan/web-components": "file:.yalc/@servicetitan/web-components"
