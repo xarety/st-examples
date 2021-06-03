@@ -10,9 +10,13 @@
         "prebuild": "npm run bootstrap",
         "build": "startup build",
         "lint": "startup lint",
-        "test": "startup test"
+        "test": "startup test",
+        "serve": "npm run build && lerna run serve"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~10.4.2"
+        "@servicetitan/startup": "file:.yalc/@servicetitan/startup"
+    },
+    "dependencies": {
+        "@servicetitan/web-components": "file:.yalc/@servicetitan/web-components"
     }
 }
