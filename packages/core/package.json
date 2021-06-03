@@ -1,5 +1,5 @@
 {
-    "name": "@servicetitan/examples",
+    "name": "@sandboxes/examples",
     "version": "1.2.0",
     "description": "",
     "main": "./dist/index.js",
@@ -50,6 +50,5 @@
     },
     "cli": {
         "web-component": true
-    },
-    "gitHead": "aee2a8f0efee001253336230c292dd5430aa199a"
+    }
 }
