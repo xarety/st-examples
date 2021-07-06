@@ -30,37 +30,37 @@ export const App: React.FC = () => {
 
     return (
         <React.StrictMode>
-            <HashBrowserRouter>
+            <HashBrowserRouter basename={basename}>
                 <Page
                     sidebar={
                         <Sidebar>
                             <Sidebar.Section padding="y">
                                 <SideNav title="Runtime">
-                                    <SideNavLinkItem pathname={`${basename}/table`} exact>
+                                    <SideNavLinkItem pathname="/table" exact>
                                         Table
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/table-master-detail`}>
+                                    <SideNavLinkItem pathname="/table-master-detail">
                                         Table (Master/Detail)
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/table-state-caching`}>
+                                    <SideNavLinkItem pathname="/table-state-caching">
                                         Table (State Caching)
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/confirm`} exact>
+                                    <SideNavLinkItem pathname="/confirm" exact>
                                         Confirm
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/confirm-navigation`}>
+                                    <SideNavLinkItem pathname="/confirm-navigation">
                                         Confirm Navigation
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/file-uploader`}>
+                                    <SideNavLinkItem pathname="/file-uploader">
                                         File Uploader
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/number-input`}>
+                                    <SideNavLinkItem pathname="/number-input">
                                         Number Input
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/notifications`}>
+                                    <SideNavLinkItem pathname="/notifications">
                                         Notifications
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname={`${basename}/dropdown-state`}>
+                                    <SideNavLinkItem pathname="/dropdown-state">
                                         Dropdown State
                                     </SideNavLinkItem>
                                 </SideNav>
@@ -71,31 +71,16 @@ export const App: React.FC = () => {
                     fullHeight
                 >
                     <Switch>
-                        <Route path={`${basename}/table`} component={TableExample} />
-                        <Route
-                            path={`${basename}/table-master-detail`}
-                            component={TableMasterDetailExample}
-                        />
-                        <Route
-                            path={`${basename}/table-state-caching`}
-                            component={TableStateCachingExample}
-                        />
-                        <Route path={`${basename}/confirm`} component={ConfirmExample} />
-                        <Route
-                            path={`${basename}/confirm-navigation`}
-                            component={ConfirmNavigationExample}
-                        />
-                        <Route path={`${basename}/file-uploader`} component={FileUploaderExample} />
-                        <Route path={`${basename}/number-input`} component={NumberInputExample} />
-                        <Route
-                            path={`${basename}/notifications`}
-                            component={NotificationsExample}
-                        />
-                        <Route
-                            path={`${basename}/dropdown-state`}
-                            component={DropdownStateExample}
-                        />
-                        <Redirect path={`${basename}/`} to={`${basename}/table`} />
+                        <Route path="/table" component={TableExample} />
+                        <Route path="/table-master-detail" component={TableMasterDetailExample} />
+                        <Route path="/table-state-caching" component={TableStateCachingExample} />
+                        <Route path="/confirm" component={ConfirmExample} />
+                        <Route path="/confirm-navigation" component={ConfirmNavigationExample} />
+                        <Route path="/file-uploader" component={FileUploaderExample} />
+                        <Route path="/number-input" component={NumberInputExample} />
+                        <Route path="/notifications" component={NotificationsExample} />
+                        <Route path="/dropdown-state" component={DropdownStateExample} />
+                        <Redirect path="/" to="/table" />
                     </Switch>
                 </Page>
             </HashBrowserRouter>

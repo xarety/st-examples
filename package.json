@@ -13,6 +13,6 @@
         "test": "startup test"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~10.4.2"
+        "@servicetitan/startup": "~12.6.0"
     }
 }
