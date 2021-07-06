@@ -9,6 +9,7 @@
         "start": "startup start",
         "prebuild": "npm run bootstrap",
         "build": "startup build",
+        "serve": "npm run build && lerna run serve",
         "lint": "startup lint",
         "test": "startup test"
     },
