@@ -12,3 +12,6 @@ dist/
 *.tsbuildinfo
 
 .npmrc
+
+.yalc/
+yalc.lock
