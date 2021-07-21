@@ -1,7 +1,7 @@
 {
     "name": "@servicetitan/host",
     "private": true,
-    "version": "3.0.1",
+    "version": "3.2.0",
     "description": "",
     "dependencies": {
         "@servicetitan/design-system": "~9.1.0",
