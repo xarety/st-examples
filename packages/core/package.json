@@ -5,26 +5,27 @@
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
     "scripts": {
-        "serve": "npx http-server --cors -c 0"
+        "serve": "npx http-server --cors -c 0 -p 8888"
     },
     "dependencies": {
         "@progress/kendo-react-dateinputs": "~3.14.0",
         "@progress/kendo-react-intl": "~3.14.0",
-        "@servicetitan/confirm": "~12.6.0",
-        "@servicetitan/confirm-navigation": "~12.6.0",
-        "@servicetitan/culture": "~12.6.0",
-        "@servicetitan/data-query": "~12.6.0",
+        "@servicetitan/confirm": "~13.0.3",
+        "@servicetitan/confirm-navigation": "~13.0.3",
+        "@servicetitan/culture": "~13.0.3",
+        "@servicetitan/data-query": "~13.0.3",
         "@servicetitan/design-system": "~9.2.1",
-        "@servicetitan/error-boundary": "~12.6.0",
-        "@servicetitan/form": "~12.6.0",
-        "@servicetitan/hash-browser-router": "~12.6.0",
-        "@servicetitan/link-item": "~12.6.0",
-        "@servicetitan/log-service": "~12.6.0",
-        "@servicetitan/notifications": "~12.6.0",
-        "@servicetitan/react-ioc": "~12.6.0",
-        "@servicetitan/suppress-warnings": "~12.6.0",
-        "@servicetitan/table": "~12.6.0",
-        "@servicetitan/web-components": "~12.6.0",
+        "@servicetitan/error-boundary": "~13.0.3",
+        "@servicetitan/form": "~13.0.3",
+        "@servicetitan/hash-browser-router": "~13.0.3",
+        "@servicetitan/lazy-module": "~13.0.3",
+        "@servicetitan/link-item": "~13.0.3",
+        "@servicetitan/log-service": "~13.0.3",
+        "@servicetitan/notifications": "~13.0.3",
+        "@servicetitan/react-ioc": "~13.0.3",
+        "@servicetitan/suppress-warnings": "~13.0.3",
+        "@servicetitan/table": "~13.0.3",
+        "@servicetitan/web-components": "~13.0.3",
         "accounting": "~0.4.1",
         "axios": "~0.21.1",
         "classnames": "~2.3.1",
@@ -41,9 +42,9 @@
     },
     "devDependencies": {
         "@types/classnames": "~2.3.1",
-        "@types/react": "~17.0.13",
-        "@types/react-dom": "~17.0.8",
-        "@types/react-router-dom": "~5.1.7"
+        "@types/react": "~17.0.14",
+        "@types/react-dom": "~17.0.9",
+        "@types/react-router-dom": "~5.1.8"
     },
     "publishConfig": {
         "access": "public"
