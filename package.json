@@ -4,16 +4,16 @@
     "description": "Multi-package web application template",
     "private": true,
     "scripts": {
-        "bootstrap": "npx lerna bootstrap --hoist",
+        "bootstrap": "npx lerna bootstrap --hoist -- --legacy-peer-deps",
         "prestart": "npm run bootstrap",
-        "start": "startup start",
+        "start": "concurrently \"startup start\" \"lerna run serve\"",
         "prebuild": "npm run bootstrap",
         "build": "startup build",
-        "serve": "npm run build && lerna run serve",
         "lint": "startup lint",
         "test": "startup test"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~12.6.0"
+        "@servicetitan/startup": "~13.0.3",
+        "concurrently": "~6.2.0"
     }
 }

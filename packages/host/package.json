@@ -1,0 +1,21 @@
+{
+    "name": "@servicetitan/host",
+    "private": true,
+    "version": "3.0.1",
+    "description": "",
+    "dependencies": {
+        "@servicetitan/design-system": "~9.2.1",
+        "@servicetitan/error-boundary": "~13.0.3",
+        "@servicetitan/log-service": "~13.0.3",
+        "@servicetitan/react-ioc": "~13.0.3",
+        "@servicetitan/web-components": "~13.0.3",
+        "axios": "~0.21.1",
+        "mobx": "~6.3.2",
+        "react": "~17.0.2",
+        "react-dom": "~17.0.2"
+    },
+    "devDependencies": {
+        "@types/react": "~17.0.14",
+        "@types/react-dom": "~17.0.9"
+    }
+}

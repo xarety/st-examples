@@ -8,22 +8,108 @@ import { SideNavLinkItem } from '@servicetitan/link-item';
 
 import { useOptionalDependencies } from '@servicetitan/react-ioc';
 import { BASENAME_TOKEN } from '@servicetitan/web-components';
-
-import {
-    TableExample,
-    TableMasterDetailExample,
-    TableStateCachingExample,
-} from '@servicetitan/table/dist/demo';
-import {
-    FileUploaderExample,
-    NumberInputExample,
-    DropdownStateExample,
-} from '@servicetitan/form/dist/demo';
-import { BasicExample as ConfirmNavigationExample } from '@servicetitan/confirm-navigation/dist/demo';
+import { lazyModule } from '@servicetitan/lazy-module';
 
 import { Page } from './page';
-import { ConfirmExample } from './examples/confirm';
-import { NotificationsExample } from './examples/notifications';
+
+const TableExample = lazyModule({
+    loader: async () => {
+        const { TableExample } = await import(
+            /* webpackChunkName: "table" */ '@servicetitan/table/dist/demo'
+        );
+
+        return TableExample;
+    },
+    name: 'TableExample',
+});
+
+const TableMasterDetailExample = lazyModule({
+    loader: async () => {
+        const { TableMasterDetailExample } = await import(
+            /* webpackChunkName: "table" */ '@servicetitan/table/dist/demo'
+        );
+
+        return TableMasterDetailExample;
+    },
+    name: 'TableMasterDetailExample',
+});
+
+const TableStateCachingExample = lazyModule({
+    loader: async () => {
+        const { TableStateCachingExample } = await import(
+            /* webpackChunkName: "table" */ '@servicetitan/table/dist/demo'
+        );
+
+        return TableStateCachingExample;
+    },
+    name: 'TableStateCachingExample',
+});
+
+const ConfirmExample = lazyModule({
+    loader: async () => {
+        const { ConfirmExample } = await import(
+            /* webpackChunkName: "confirm" */ './examples/confirm'
+        );
+
+        return ConfirmExample;
+    },
+    name: 'ConfirmExample',
+});
+
+const ConfirmNavigationExample = lazyModule({
+    loader: async () => {
+        const { BasicExample } = await import(
+            /* webpackChunkName: "confirm-navigation" */ '@servicetitan/confirm-navigation/dist/demo'
+        );
+
+        return BasicExample;
+    },
+    name: 'ConfirmNavigationExample',
+});
+
+const FileUploaderExample = lazyModule({
+    loader: async () => {
+        const { FileUploaderExample } = await import(
+            /* webpackChunkName: "form" */ '@servicetitan/form/dist/demo'
+        );
+
+        return FileUploaderExample;
+    },
+    name: 'FileUploaderExample',
+});
+
+const NumberInputExample = lazyModule({
+    loader: async () => {
+        const { NumberInputExample } = await import(
+            /* webpackChunkName: "form" */ '@servicetitan/form/dist/demo'
+        );
+
+        return NumberInputExample;
+    },
+    name: 'NumberInputExample',
+});
+
+const NotificationsExample = lazyModule({
+    loader: async () => {
+        const { NotificationsExample } = await import(
+            /* webpackChunkName: "notifications" */ './examples/notifications'
+        );
+
+        return NotificationsExample;
+    },
+    name: 'NotificationsExample',
+});
+
+const DropdownStateExample = lazyModule({
+    loader: async () => {
+        const { DropdownStateExample } = await import(
+            /* webpackChunkName: "form" */ '@servicetitan/form/dist/demo'
+        );
+
+        return DropdownStateExample;
+    },
+    name: 'DropdownStateExample',
+});
 
 export const App: React.FC = () => {
     const [basename = ''] = useOptionalDependencies(BASENAME_TOKEN);
