@@ -3,6 +3,7 @@ import React from 'react';
 import { Frame } from '@servicetitan/design-system';
 import { Loader } from '@servicetitan/web-components';
 
+import './design-system.css';
 import './app.css';
 
 export const App: React.FC = () => (
