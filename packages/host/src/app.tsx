@@ -3,6 +3,10 @@ import React from 'react';
 import { Frame } from '@servicetitan/design-system';
 import { Loader } from '@servicetitan/web-components';
 
+import { configure } from '@servicetitan/dependency';
+
+configure({ a: 'new' });
+
 import './design-system.css';
 import './app.css';
 
