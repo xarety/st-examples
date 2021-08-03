@@ -4,7 +4,7 @@
     "description": "Multi-package web application template",
     "private": true,
     "scripts": {
-        "bootstrap": "npx lerna bootstrap --hoist -- --legacy-peer-deps",
+        "bootstrap": "node bootstrap.js",
         "prestart": "npm run bootstrap",
         "start": "concurrently \"startup start\" \"lerna run serve\"",
         "prebuild": "npm run bootstrap",
@@ -15,5 +15,8 @@
     "devDependencies": {
         "@servicetitan/startup": "~13.0.4",
         "concurrently": "~6.2.0"
-    }
+    },
+    "workspaces": [
+        "packages/*"
+    ]
 }
