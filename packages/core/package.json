@@ -1,6 +1,6 @@
 {
     "name": "@servicetitan/examples",
-    "version": "8080.0.8",
+    "version": "8080.0.9",
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
