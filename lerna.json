@@ -2,7 +2,7 @@
     "version": "1.1.5",
     "command": {
         "publish": {
-            "registry": "https://verdaccio.st.dev"
+            "registry": "http://localhost:8080"
         }
     },
     "packages": [

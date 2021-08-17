@@ -4,9 +4,6 @@
     "description": "",
     "main": "./dist/index.js",
     "typings": "./dist/index.d.ts",
-    "scripts": {
-        "serve": "npx http-server --cors -c 0 -p 8888"
-    },
     "dependencies": {
         "@progress/kendo-react-dateinputs": "~3.14.0",
         "@progress/kendo-react-intl": "~3.14.0",
