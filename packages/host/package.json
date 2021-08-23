@@ -10,7 +10,7 @@
         "@servicetitan/react-ioc": "~14.3.0",
         "@servicetitan/web-components": "~14.3.0",
         "axios": "~0.21.1",
-        "classnames": "~2.2.6",
+        "classnames": "~2.3.1",
         "formstate": "~2.0.0",
         "mobx": "~6.2.0",
         "mobx-react": "~7.1.0",
@@ -19,7 +19,6 @@
         "react-dom": "~17.0.1"
     },
     "devDependencies": {
-        "@types/classnames": "~2.2.10",
         "@types/react": "~17.0.14",
         "@types/react-dom": "~17.0.9"
     }
