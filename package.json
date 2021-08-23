@@ -13,8 +13,8 @@
         "test": "startup test"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~13.0.4",
-        "concurrently": "~6.2.0"
+        "@servicetitan/startup": "~14.3.0",
+        "concurrently": "~6.2.1"
     },
     "workspaces": [
         "packages/*"

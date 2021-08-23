@@ -119,7 +119,7 @@ export const App: React.FC = () => {
             <HashBrowserRouter basename={basename}>
                 <Page
                     sidebar={
-                        <Sidebar>
+                        <Sidebar localStorageKey="servicetitan-examples__navigation">
                             <Sidebar.Section padding="y">
                                 <SideNav title="Runtime">
                                     <SideNavLinkItem pathname="/table" exact>
