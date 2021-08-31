@@ -2,7 +2,7 @@
     "version": "1.2.3",
     "command": {
         "publish": {
-            "registry": "verdaccio.servicetitan.com"
+            "registry": "https://verdaccio.servicetitan.com"
         }
     },
     "packages": [
