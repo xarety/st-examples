@@ -6,15 +6,14 @@
     "scripts": {
         "bootstrap": "node bootstrap.js",
         "prestart": "npm run bootstrap",
-        "start": "concurrently \"startup start\" \"lerna run serve\"",
+        "start": "startup start",
         "prebuild": "npm run bootstrap",
         "build": "startup build",
         "lint": "startup lint",
         "test": "startup test"
     },
     "devDependencies": {
-        "@servicetitan/startup": "~14.3.0",
-        "concurrently": "~6.2.1"
+        "@servicetitan/startup": "~16.0.0"
     },
     "workspaces": [
         "packages/*"

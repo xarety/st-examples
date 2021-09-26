@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { Page as AnvilPage, PageProps as AnvilPageProps } from '@servicetitan/design-system';
 
@@ -10,7 +10,7 @@ export interface PageProps extends AnvilPageProps {
     fullHeight?: boolean;
 }
 
-export const Page: React.FC<PageProps> = ({ className, fullHeight, ...props }) => (
+export const Page: FC<PageProps> = ({ className, fullHeight, ...props }) => (
     <AnvilPage
         maxWidth="wide"
         spacing="none"

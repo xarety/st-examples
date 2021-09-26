@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, FC } from 'react';
 
 import { Text } from '@servicetitan/design-system';
 
@@ -14,8 +14,8 @@ import {
     ServerCustomExample,
 } from '@servicetitan/notifications/dist/demo';
 
-export const NotificationsExample: React.FC = () => (
-    <React.Fragment>
+export const NotificationsExample: FC = () => (
+    <Fragment>
         <Text size={4} className="m-b-half">
             Basic usage
         </Text>
@@ -60,5 +60,5 @@ export const NotificationsExample: React.FC = () => (
             Server Custom
         </Text>
         <ServerCustomExample />
-    </React.Fragment>
+    </Fragment>
 );

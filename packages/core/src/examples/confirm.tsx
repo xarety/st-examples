@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, FC } from 'react';
 
 import { Text } from '@servicetitan/design-system';
 
@@ -11,8 +11,8 @@ import {
     CustomExample,
 } from '@servicetitan/confirm/dist/demo';
 
-export const ConfirmExample: React.FC = () => (
-    <React.Fragment>
+export const ConfirmExample: FC = () => (
+    <Fragment>
         <Text size={4} className="m-b-half">
             Default confirmation
         </Text>
@@ -42,5 +42,5 @@ export const ConfirmExample: React.FC = () => (
             Custom confirmation component
         </Text>
         <CustomExample />
-    </React.Fragment>
+    </Fragment>
 );

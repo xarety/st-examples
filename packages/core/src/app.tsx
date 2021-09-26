@@ -1,127 +1,88 @@
-import React from 'react';
+import { FC, StrictMode, useEffect } from 'react';
+
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+import { Sidebar, SideNav } from '@servicetitan/design-system';
+
 import { HashBrowserRouter } from '@servicetitan/hash-browser-router';
-
-import { SideNav, Sidebar } from '@servicetitan/design-system';
-import { SideNavLinkItem } from '@servicetitan/link-item';
-
 import { useOptionalDependencies } from '@servicetitan/react-ioc';
-import { BASENAME_TOKEN } from '@servicetitan/web-components';
-import { lazyModule } from '@servicetitan/lazy-module';
+import { BASENAME_TOKEN, EventBus } from '@servicetitan/web-components';
+import { SideNavLinkItem } from '@servicetitan/link-item';
 
 import { Page } from './page';
 
-const TableExample = lazyModule({
-    loader: async () => {
-        const { TableExample } = await import(
-            /* webpackChunkName: "table" */ '@servicetitan/table/dist/demo'
-        );
+import {
+    ColorPickerExample,
+    ConfirmExample,
+    ConfirmNavigationExample,
+    DateRangePickerExample,
+    DropdownStateExample,
+    FileUploaderExample,
+    InputDateMaskExample,
+    NotificationsExample,
+    NumberInputExample,
+    OrdinalNumberInputExample,
+    PhoneNumberInputExample,
+    TableExample,
+    TableMasterDetailExample,
+    TableStateCachingExample,
+} from './examples';
 
-        return TableExample;
-    },
-    name: 'TableExample',
-});
+export const App: FC = () => {
+    const [basename = '', eventBus] = useOptionalDependencies(BASENAME_TOKEN, EventBus);
 
-const TableMasterDetailExample = lazyModule({
-    loader: async () => {
-        const { TableMasterDetailExample } = await import(
-            /* webpackChunkName: "table" */ '@servicetitan/table/dist/demo'
-        );
+    useEffect(() => {
+        const myCustomEventHandler = () => {
+            console.log('`my-custom-event` has been fired');
+        };
+        eventBus?.on('my-custom-event', myCustomEventHandler);
 
-        return TableMasterDetailExample;
-    },
-    name: 'TableMasterDetailExample',
-});
-
-const TableStateCachingExample = lazyModule({
-    loader: async () => {
-        const { TableStateCachingExample } = await import(
-            /* webpackChunkName: "table" */ '@servicetitan/table/dist/demo'
-        );
-
-        return TableStateCachingExample;
-    },
-    name: 'TableStateCachingExample',
-});
-
-const ConfirmExample = lazyModule({
-    loader: async () => {
-        const { ConfirmExample } = await import(
-            /* webpackChunkName: "confirm" */ './examples/confirm'
-        );
-
-        return ConfirmExample;
-    },
-    name: 'ConfirmExample',
-});
-
-const ConfirmNavigationExample = lazyModule({
-    loader: async () => {
-        const { BasicExample } = await import(
-            /* webpackChunkName: "confirm-navigation" */ '@servicetitan/confirm-navigation/dist/demo'
-        );
-
-        return BasicExample;
-    },
-    name: 'ConfirmNavigationExample',
-});
-
-const FileUploaderExample = lazyModule({
-    loader: async () => {
-        const { FileUploaderExample } = await import(
-            /* webpackChunkName: "form" */ '@servicetitan/form/dist/demo'
-        );
-
-        return FileUploaderExample;
-    },
-    name: 'FileUploaderExample',
-});
-
-const NumberInputExample = lazyModule({
-    loader: async () => {
-        const { NumberInputExample } = await import(
-            /* webpackChunkName: "form" */ '@servicetitan/form/dist/demo'
-        );
-
-        return NumberInputExample;
-    },
-    name: 'NumberInputExample',
-});
-
-const NotificationsExample = lazyModule({
-    loader: async () => {
-        const { NotificationsExample } = await import(
-            /* webpackChunkName: "notifications" */ './examples/notifications'
-        );
-
-        return NotificationsExample;
-    },
-    name: 'NotificationsExample',
-});
-
-const DropdownStateExample = lazyModule({
-    loader: async () => {
-        const { DropdownStateExample } = await import(
-            /* webpackChunkName: "form" */ '@servicetitan/form/dist/demo'
-        );
-
-        return DropdownStateExample;
-    },
-    name: 'DropdownStateExample',
-});
-
-export const App: React.FC = () => {
-    const [basename = ''] = useOptionalDependencies(BASENAME_TOKEN);
+        return () => {
+            eventBus?.off('my-custom-event', myCustomEventHandler);
+        };
+    }, [eventBus]);
 
     return (
-        <React.StrictMode>
+        <StrictMode>
             <HashBrowserRouter basename={basename}>
                 <Page
                     sidebar={
                         <Sidebar localStorageKey="servicetitan-examples__navigation">
                             <Sidebar.Section padding="y">
-                                <SideNav title="Runtime">
+                                <SideNav title="Examples">
+                                    <SideNavLinkItem pathname="/color-picker">
+                                        Color Picker
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/confirm" exact>
+                                        Confirm
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/confirm-navigation">
+                                        Confirm Navigation
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/date-range-picker">
+                                        Date Range Picker
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/dropdown-state">
+                                        Dropdown State
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/file-uploader">
+                                        File Uploader
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/input-date-mask">
+                                        Input Date Mask
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/notifications">
+                                        Notifications
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/number-input">
+                                        Number Input
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/original-number-input">
+                                        Original Number Input
+                                    </SideNavLinkItem>
+                                    <SideNavLinkItem pathname="/phone-number-input">
+                                        Phone Number Input
+                                    </SideNavLinkItem>
                                     <SideNavLinkItem pathname="/table" exact>
                                         Table
                                     </SideNavLinkItem>
@@ -131,24 +92,6 @@ export const App: React.FC = () => {
                                     <SideNavLinkItem pathname="/table-state-caching">
                                         Table (State Caching)
                                     </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/confirm" exact>
-                                        Confirm
-                                    </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/confirm-navigation">
-                                        Confirm Navigation
-                                    </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/file-uploader">
-                                        File Uploader
-                                    </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/number-input">
-                                        Number Input
-                                    </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/notifications">
-                                        Notifications
-                                    </SideNavLinkItem>
-                                    <SideNavLinkItem pathname="/dropdown-state">
-                                        Dropdown State
-                                    </SideNavLinkItem>
                                 </SideNav>
                             </Sidebar.Section>
                         </Sidebar>
@@ -157,19 +100,27 @@ export const App: React.FC = () => {
                     fullHeight
                 >
                     <Switch>
+                        <Route path="/color-picker" component={ColorPickerExample} />
+                        <Route path="/confirm" component={ConfirmExample} />
+                        <Route path="/confirm-navigation" component={ConfirmNavigationExample} />
+                        <Route path="/date-range-picker" component={DateRangePickerExample} />
+                        <Route path="/dropdown-state" component={DropdownStateExample} />
+                        <Route path="/file-uploader" component={FileUploaderExample} />
+                        <Route path="/input-date-mask" component={InputDateMaskExample} />
+                        <Route path="/notifications" component={NotificationsExample} />
+                        <Route path="/number-input" component={NumberInputExample} />
+                        <Route
+                            path="/original-number-input"
+                            component={OrdinalNumberInputExample}
+                        />
+                        <Route path="/phone-number-input" component={PhoneNumberInputExample} />
                         <Route path="/table" component={TableExample} />
                         <Route path="/table-master-detail" component={TableMasterDetailExample} />
                         <Route path="/table-state-caching" component={TableStateCachingExample} />
-                        <Route path="/confirm" component={ConfirmExample} />
-                        <Route path="/confirm-navigation" component={ConfirmNavigationExample} />
-                        <Route path="/file-uploader" component={FileUploaderExample} />
-                        <Route path="/number-input" component={NumberInputExample} />
-                        <Route path="/notifications" component={NotificationsExample} />
-                        <Route path="/dropdown-state" component={DropdownStateExample} />
                         <Redirect path="/" to="/table" />
                     </Switch>
                 </Page>
             </HashBrowserRouter>
-        </React.StrictMode>
+        </StrictMode>
     );
 };
