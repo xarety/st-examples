@@ -1,7 +1,11 @@
 {
     "name": "@servicetitan/examples",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "",
+    "scripts": {
+        "predeploy": "cd ../../ && npm run bootstrap && startup build --scope @servicetitan/examples",
+        "deploy": "npm publish"
+    },
     "dependencies": {
         "@servicetitan/confirm": "~16.0.0",
         "@servicetitan/confirm-navigation": "~16.0.0",
@@ -39,7 +43,8 @@
         "@types/react-router-dom": "~5.3.0"
     },
     "publishConfig": {
-        "access": "public"
+        "access": "public",
+        "registry": "https://verdaccio.servicetitan.com"
     },
     "cli": {
         "webpack": {
