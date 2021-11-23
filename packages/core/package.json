@@ -1,6 +1,6 @@
 {
     "name": "@servicetitan/examples",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "",
     "scripts": {
         "predeploy": "cd ../../ && npm run bootstrap && startup build --scope @servicetitan/examples",
